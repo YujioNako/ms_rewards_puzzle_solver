@@ -1,2 +1,24 @@
-# ms_rewards_puzzle_solver
-3×3滑块拼图自动求解器，基于python
+# puzzle_solver_4_ms_rewards
+为Microsoft Rewards设计的3×3滑块拼图自动求解器，基于python
+## 准备
+* 使用下方命令安装对应依赖
+```
+pip install opencv-python numpy pyautogui pillow tkinter pytesseract cnocr
+```
+* 中国大陆用户推荐使用下方命令安装对应依赖
+```
+pip install opencv-python numpy pyautogui pillow tkinter pytesseract cnocr -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple some-package
+```
+## 使用
+* 打开程序以及拼图网页
+* 设置点击延迟（即还原拼图时每步操作的间隔时间）以及Debug模式（开启时会在程序所在同级目录保存截图图像）
+* 点击`自动检测拼图`或`手动设置区域`，来划定拼图范围；若已存在保存的拼图范围，可以使用`测试识别`检测区域是否有效
+* 检查拼图预览中的初始排布是否与拼图网页上的相同，若有差异，可以点击对应格子修改改格上的拼图编号
+* 点击`开始自动解密`以开始自动还原拼图
+* 您可以通过`保存设置`来保存目前划定的拼图区域、Debug设置以及点击延迟设定，保存的数据将以JSON格式保存在程序所在同级目录，并在下一次打开程序时自动读取（也可以通过`加载设置`主动重新读取）
+## 备注
+* `自动检测拼图`的准确度并不高，如果识别范围错误，这不是你的问题，请改用`手动设置区域`
+* 程序附带拼图编号识别功能，但由于拼图区域划定可能因各种原因出现偏移，因此偏好识别可能存在识别错误、识别缺漏，届时请手动调整拼图初始状态或辅以Debug模式自行尝试修改代码消除偏差
+* 拼图操作的容差远高于编号识别，因此编号识别错误并不意味着不能开始自动解密，只要手动修改初始状态至正确，程序依旧能正常操作拼图
+## 声明
+<b>本程序是由YujioNako制作，非美国微软公司官方发布的程序，程序仅供学习参考，Microsoft是美国微软公司的注册商标</b>
